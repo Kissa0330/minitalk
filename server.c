@@ -6,14 +6,21 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:51:12 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/22 23:57:18 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/23 00:18:23 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+#include <stdio.h>
+static void Signal1(int code)
+{
+	printf("signal received\n");
+	signal(SIGUSR1, Signal1);
+}
 
 int main(void)
 {
-	while(1);
+	signal(SIGUSR1, Signal1);
+	while (1);
 	return 0;
 }
