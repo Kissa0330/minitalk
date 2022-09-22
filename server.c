@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 23:49:39 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/22 23:52:27 by takanoraika      ###   ########.fr       */
+/*   Created: 2022/09/22 23:51:12 by takanoraika       #+#    #+#             */
+/*   Updated: 2022/09/22 23:57:18 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "minitalk.h"
 
-#include <signal.h>
-
-
-#endif
+int main(void)
+{
+	while(1);
+	return 0;
+}
