@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:49:39 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/23 13:23:46 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/23 13:50:10 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include <signal.h>
 #include <unistd.h>
 #include "./libft/libft.h"
+
+typedef struct s_bit
+{
+	int	bit[32];
+	int	i;
+}	t_bit;
 
 #define BIT_SIZE 32
 
