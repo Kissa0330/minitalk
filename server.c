@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:51:12 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/23 15:34:23 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/23 15:35:52 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,3 @@ int main(void)
 	}
 	return 0;
 }
-
-//TODO client側のチェックは完了, server側の動作が確認できず,server側のデバッグから始めよう
