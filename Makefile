@@ -3,7 +3,7 @@ CLIENT_SRCS = clients.c
 SERVER_SRCS = server.c
 SRCS = utils.c
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+# CFLAGS = -Wall -Werror -Wextra
 
 .PHONY : all clean fclean re
 
