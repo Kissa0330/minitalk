@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:51:12 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/23 15:35:52 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/23 15:41:46 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static void Signal1(int code)
 	(void)code;
 	bit.bit[bit.i] = 0;
 	bit.i++;
-	printf("signal == 1 bit.i == %d\n", bit.i);
 	signal(SIGUSR1, Signal1);
 }
 
@@ -28,7 +27,6 @@ static void Signal2(int code)
 	(void)code;
 	bit.bit[bit.i] = 1;
 	bit.i++;
-	printf("signal == 2 bit.i == %d\n", bit.i);
 	signal(SIGUSR2, Signal2);
 }
 
