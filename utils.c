@@ -6,19 +6,21 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:48:58 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/22 23:49:03 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/23 12:59:53 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	*changebinarynum(int *binarynum, int num, int negativeflag)
+#include "minitalk.h"
+
+static int	*change_to_binarynum(int *binarynum, int num, int negativeflag)
 {
 	int	i;
 
-	i = 31;
+	i = BIT_SIZE - 1;
 	if (negativeflag == 1)
 	{
 		num = num * -1 - 1;
-		while (num)
+		while (num && i >= 0)
 		{
 			binarynum[i] -= num % 2;
 			num /= 2;
@@ -27,7 +29,7 @@ static int	*changebinarynum(int *binarynum, int num, int negativeflag)
 	}
 	else if (negativeflag == 0)
 	{
-		while (num)
+		while (num && i >= 0)
 		{
 			binarynum[i] += num % 2;
 			num /= 2;
@@ -43,14 +45,13 @@ int	*ft_decimaltobinary(int num)
 	int	initial;
 	int	i;
 
-	res = malloc(sizeof(int) * 33);
-	res[32] = '\0';
+	res = malloc(sizeof(int) * BIT_SIZE);
 	if (num < 0)
 		initial = 1;
 	else if (0 <= num)
 		initial = 0;
 	i = 0;
-	while (i < 32)
+	while (i < BIT_SIZE)
 		res[i++] = initial;
-	return (changebinarynum(res, num, initial));
+	return (change_to_binarynum(res, num, initial));
 }
