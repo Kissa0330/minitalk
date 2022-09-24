@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:49:29 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/24 22:34:28 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/24 23:04:58 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char *argv[])
 		exit(1);
 	i = 0;
 	id = (pid_t)ft_atoi(argv[1]);
-	if (id < 2)
+	if (id < 100 || id > 99998)
 		exit(1);
 	while (argv[2][i] != '\0')
 	{
