@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:48:58 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/23 13:22:20 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/24 20:50:07 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	*change_to_binarynum(int *binarynum, int num, int negativeflag)
 			i --;
 		}
 	}
-	else if (negativeflag == 0)
+	else
 	{
 		while (num && i >= 0)
 		{
@@ -48,7 +48,7 @@ int	*ft_decimal_to_binary(int num)
 	res = malloc(sizeof(int) * BIT_SIZE);
 	if (num < 0)
 		initial = 1;
-	else if (0 <= num)
+	else
 		initial = 0;
 	i = 0;
 	while (i < BIT_SIZE)

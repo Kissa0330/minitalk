@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:49:29 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/23 16:31:42 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/24 21:15:48 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,22 @@ static void send_signal(pid_t id, int *bit)
 
 int main(int argc, char *argv[])
 {
-	int	i;
-	int	*bit;
+	int		i;
+	int		*bit;
+	pid_t	id;
 
 	if (argc != 3)
 		exit(1);
 	i = 0;
+	id = (pid_t)ft_atoi(argv[1]);
+	if (id < 2)
+		exit(1);
 	while (argv[2][i] != '\0')
 	{
 		bit = ft_decimal_to_binary((int)argv[2][i]);
-		send_signal((pid_t)ft_atoi(argv[1]), bit);
+		send_signal(id, bit);
 		free(bit);
 		i ++;
 	}
-	return 0;
+	exit(0);
 }
