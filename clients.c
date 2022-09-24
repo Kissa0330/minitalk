@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:49:29 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/24 22:16:26 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/24 22:34:28 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static void	send_signal(pid_t id, char c)
 int	main(int argc, char *argv[])
 {
 	int		i;
-	int		*bit;
 	pid_t	id;
 
 	if (argc != 3)
