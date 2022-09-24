@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:49:39 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/24 21:10:45 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/24 21:54:36 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,8 @@
 
 typedef struct s_bit
 {
-	int	bit[BIT_SIZE];
+	int	c;
 	int	i;
 }	t_bit;
-
-
-int				*ft_decimal_to_binary(int num);
-unsigned int	ft_binary_to_decimal(int *binary);
 
 #endif

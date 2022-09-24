@@ -1,9 +1,8 @@
 NAME = minitalk
 CLIENT_NAME = client
 SERVER_NAME = server
-SRCS = utils.c
-CLIENT_SRCS = clients.c $(SRCS)
-SERVER_SRCS = server.c $(SRCS)
+CLIENT_SRCS = clients.c
+SERVER_SRCS = server.c
 CC = gcc
 # CFLAGS = -Wall -Werror -Wextra
 

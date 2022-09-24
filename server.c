@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:51:12 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/24 21:14:50 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/24 21:56:09 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,34 @@
 #include <stdio.h>
 t_bit bit;
 
-static void Signal1(int code)
+static void Signal_handler(int code)
 {
-	(void)code;
-	bit.bit[bit.i] = 0;
-	// printf("%d\n",bit.bit[bit.i]);
-	bit.i++;
-	signal(SIGUSR1, Signal1);
-}
+	char	res;
 
-static void Signal2(int code)
-{
-	(void)code;
-	bit.bit[bit.i] = 1;
-	// printf("%d\n",bit.bit[bit.i]);
+	if (code == SIGUSR1)
+		signal(SIGUSR1, Signal_handler);
+	else if (code == SIGUSR2)
+	{
+		bit.c = bit.c | 1 << bit.i;
+		signal(SIGUSR2, Signal_handler);
+	}
 	bit.i++;
-	signal(SIGUSR2, Signal2);
+	if (bit.i == BIT_SIZE)
+	{
+		res = bit.c;
+		bit.i = 0;
+		bit.c = 0;
+		write(1, &res, 1);
+	}
+	
 }
 
 int main(void)
 {
-	char	res;
-
 	bit.i = 0;
-	signal(SIGUSR1, Signal1);
-	signal(SIGUSR2, Signal2);
-	while (1)
-	{
-		if (bit.i == BIT_SIZE)
-		{
-			res = ft_binary_to_decimal(bit.bit);
-			bit.i = 0;
-			write(1, &res, 1);
-		}
-	}
+	bit.c = 0;
+	signal(SIGUSR1, Signal_handler);
+	signal(SIGUSR2, Signal_handler);
+	while (1);
 	return 0;
 }
