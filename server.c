@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:51:12 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/09/24 22:30:13 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/09/25 10:49:48 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ static void	signal_handler(int code)
 
 int	main(void)
 {
+	int	id;
+
+	id = getpid();
+	ft_putnbr_fd(id, 1);
+	ft_putchar_fd('\n', 1);
 	g_bit.i = 0;
 	g_bit.c = 0;
 	signal(SIGUSR1, signal_handler);

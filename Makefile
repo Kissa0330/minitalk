@@ -18,7 +18,9 @@ $(CLIENT_NAME): $(CLIENT_SRCS)
 	$(CC) $(CFLAGS) $(CLIENT_SRCS) -L. -lft -o $(CLIENT_NAME)
 
 $(SERVER_NAME): $(SERVER_SRCS)
-	$(CC) $(CFLAGS) $(SERVER_SRCS) -o $(SERVER_NAME)
+	make -C libft
+	cp ./libft/libft.a .
+	$(CC) $(CFLAGS) $(SERVER_SRCS) -L. -lft -o $(SERVER_NAME)
 
 clean:
 	make -C libft clean
